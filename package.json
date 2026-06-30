@@ -1,0 +1,68 @@
+{
+    "name": "i18n-vscode",
+    "main": "./dist/extension.js",
+    "version": "0.1.0",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/les3dev/i18n-vscode.git"
+    },
+    "publisher": "les3dev",
+    "displayName": "Translation preview",
+    "description": "Shows translated values inline for i18n calls in Svelte and TypeScript files",
+    "files": [
+        "LICENSE.md",
+        "dist/extension.js"
+    ],
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "i18n-preview.change_locale",
+                "title": "i18n: Change locale"
+            },
+            {
+                "command": "i18n-preview.reload",
+                "title": "i18n: Reload translations"
+            },
+            {
+                "command": "i18n-preview.open_at_line",
+                "title": "i18n: Open translation source"
+            }
+        ],
+        "configuration": {
+            "title": "i18n Preview",
+            "properties": {
+                "i18n-preview.locale": {
+                    "type": "string",
+                    "default": "en",
+                    "enum": [
+                        "en",
+                        "fr"
+                    ],
+                    "description": "Locale to use for inline previews"
+                }
+            }
+        }
+    },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "scripts": {
+        "build": "tsc -p tsconfig.json",
+        "watch": "tsc -p tsconfig.json --watch",
+        "package": "pnpm run build && vsce package --no-dependencies && rm -rf dist",
+        "publish": "vsce publish"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "@types/vscode": "^1.85.0",
+        "@vscode/vsce": "^3.0.0",
+        "typescript": "^5.0.0"
+    }
+}
