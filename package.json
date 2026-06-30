@@ -1,16 +1,18 @@
 {
-    "name": "i18n-vscode",
+    "name": "i18n-vscode-preview",
+    "icon": "icon.webp",
     "main": "./dist/extension.js",
     "version": "0.1.0",
     "license": "MIT",
+    "publisher": "les3dev",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/les3dev/i18n-vscode.git"
     },
-    "publisher": "les3dev",
-    "displayName": "Translation preview",
+    "displayName": "Translation preview for i18n",
     "description": "Shows translated values inline for i18n calls in Svelte and TypeScript files",
     "files": [
+        "icon.webp",
         "LICENSE.md",
         "dist/extension.js"
     ],
